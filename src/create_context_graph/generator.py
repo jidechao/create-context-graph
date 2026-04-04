@@ -197,7 +197,6 @@ _PROPERTY_CLAMP_RANGES: dict[str, tuple[float, float]] = {
     "avg_return": (-100.0, 100.0),
     "max_loss": (0.0, 10000.0),
     "pnl": (-10000.0, 10000.0),
-    "quantity": (1.0, 1000.0),
 }
 
 # Known taxonomy class -> valid values

@@ -144,265 +144,265 @@
     "Underlying": [
       {
         "name": "S&P 500 Index",
-        "ticker": "AAPL",
+        "ticker": "SPX",
         "asset_class": "index",
-        "spot_price": 6500.0,
-        "prev_close": 644.49
+        "spot_price": 5820.5,
+        "prev_close": 5795.3
       },
       {
         "name": "SPDR S&P 500 ETF",
-        "ticker": "MSFT",
-        "asset_class": "equity",
-        "spot_price": 6500.0,
-        "prev_close": 266.5
+        "ticker": "SPY",
+        "asset_class": "etf",
+        "spot_price": 582.05,
+        "prev_close": 579.53
       },
       {
         "name": "Invesco QQQ Trust",
-        "ticker": "GOOGL",
+        "ticker": "QQQ",
         "asset_class": "etf",
-        "spot_price": 6500.0,
-        "prev_close": 868.11
+        "spot_price": 503.2,
+        "prev_close": 500.8
       },
       {
         "name": "iShares Russell 2000",
-        "ticker": "AMZN",
-        "asset_class": "index",
-        "spot_price": 6500.0,
-        "prev_close": 952.33
+        "ticker": "IWM",
+        "asset_class": "etf",
+        "spot_price": 212.4,
+        "prev_close": 210.9
       },
       {
         "name": "Apple Inc",
-        "ticker": "TSLA",
+        "ticker": "AAPL",
         "asset_class": "equity",
-        "spot_price": 6500.0,
-        "prev_close": 104.56
+        "spot_price": 228.5,
+        "prev_close": 226.8
       }
     ],
     "OptionsContract": [
       {
         "name": "SPX 5800C 0DTE",
         "contract_id": "OPT-2026-0000",
-        "strike": 505.63,
-        "expiry": "2026-07-03",
+        "strike": 5800,
+        "expiry": "2026-03-28",
         "option_type": "call",
-        "open_interest": 6459,
-        "volume": 9403,
-        "implied_volatility": 2.0,
-        "delta": 1.0,
-        "gamma": 0.15,
-        "theta": 0.0,
-        "vega": 10.57,
-        "bid": 500.0,
-        "ask": 500.0
+        "open_interest": 45000,
+        "volume": 12000,
+        "implied_volatility": 0.18,
+        "delta": 0.55,
+        "gamma": 0.008,
+        "theta": -12.5,
+        "vega": 4.2,
+        "bid": 24.5,
+        "ask": 25.2
       },
       {
         "name": "SPX 5750P 0DTE",
         "contract_id": "OPT-2026-0001",
-        "strike": 936.94,
-        "expiry": "2026-06-17",
+        "strike": 5750,
+        "expiry": "2026-03-28",
         "option_type": "put",
-        "open_interest": 5769,
-        "volume": 5358,
-        "implied_volatility": 2.0,
-        "delta": 1.0,
-        "gamma": 0.15,
-        "theta": 0.0,
-        "vega": 100.0,
-        "bid": 500.0,
-        "ask": 178.0
+        "open_interest": 38000,
+        "volume": 8500,
+        "implied_volatility": 0.21,
+        "delta": -0.3,
+        "gamma": 0.006,
+        "theta": -8.4,
+        "vega": 3.1,
+        "bid": 11.8,
+        "ask": 12.4
       },
       {
         "name": "SPY 580C Weekly",
-        "contract_id": "OPT-2024-0002",
-        "strike": 638.94,
-        "expiry": "2026-01-29",
+        "contract_id": "OPT-2026-0002",
+        "strike": 580,
+        "expiry": "2026-04-03",
         "option_type": "call",
-        "open_interest": 8936,
-        "volume": 3640,
-        "implied_volatility": 2.0,
-        "delta": 1.0,
-        "gamma": 0.15,
-        "theta": 0.0,
-        "vega": 100.0,
-        "bid": 500.0,
-        "ask": 463.77
-      },
-      {
-        "name": "SPY 575P Weekly",
-        "contract_id": "OPT-2024-0003",
-        "strike": 100.0,
-        "expiry": "2024-12-13",
-        "option_type": "put",
-        "open_interest": 1539,
-        "volume": 2057,
-        "implied_volatility": 2.0,
-        "delta": 1.0,
-        "gamma": 0.15,
-        "theta": 0.0,
-        "vega": 100.0,
-        "bid": 183.48,
-        "ask": 500.0
+        "open_interest": 120000,
+        "volume": 45000,
+        "implied_volatility": 0.16,
+        "delta": 0.52,
+        "gamma": 0.012,
+        "theta": -0.45,
+        "vega": 0.18,
+        "bid": 3.2,
+        "ask": 3.35
       },
       {
         "name": "QQQ 500C 0DTE",
-        "contract_id": "OPT-2024-0004",
-        "strike": 852.06,
-        "expiry": "2025-10-10",
+        "contract_id": "OPT-2026-0003",
+        "strike": 500,
+        "expiry": "2026-03-28",
         "option_type": "call",
-        "open_interest": 8819,
-        "volume": 3234,
-        "implied_volatility": 2.0,
-        "delta": 1.0,
-        "gamma": 0.15,
-        "theta": 0.0,
-        "vega": 100.0,
-        "bid": 500.0,
-        "ask": 76.76
+        "open_interest": 85000,
+        "volume": 32000,
+        "implied_volatility": 0.19,
+        "delta": 0.6,
+        "gamma": 0.01,
+        "theta": -1.8,
+        "vega": 0.22,
+        "bid": 4.5,
+        "ask": 4.7
+      },
+      {
+        "name": "AAPL 230P Weekly",
+        "contract_id": "OPT-2026-0004",
+        "strike": 230,
+        "expiry": "2026-04-03",
+        "option_type": "put",
+        "open_interest": 55000,
+        "volume": 18000,
+        "implied_volatility": 0.24,
+        "delta": -0.4,
+        "gamma": 0.015,
+        "theta": -0.35,
+        "vega": 0.12,
+        "bid": 2.8,
+        "ask": 3.0
       }
     ],
     "ExposureLevel": [
       {
         "name": "GEX @ 5800",
         "level_id": "EXP-2026-0000",
-        "strike_price": 6500.0,
-        "gex": 988.82,
-        "dex": 72.8,
-        "vex": 575.42,
-        "chex": 482.27,
-        "net_gamma": 144.2,
-        "timestamp": "2025-06-13T17:15:00"
+        "strike_price": 5800,
+        "gex": 850.5,
+        "dex": -120.3,
+        "vex": 45.2,
+        "chex": -32.1,
+        "net_gamma": 720.4,
+        "timestamp": "2026-03-28T09:30:00"
       },
       {
         "name": "GEX @ 5750",
-        "level_id": "EXP-2024-0001",
-        "strike_price": 6500.0,
-        "gex": 955.03,
-        "dex": 732.55,
-        "vex": 14.18,
-        "chex": 122.53,
-        "net_gamma": 572.83,
-        "timestamp": "2026-11-30T16:45:00"
+        "level_id": "EXP-2026-0001",
+        "strike_price": 5750,
+        "gex": -420.8,
+        "dex": 210.5,
+        "vex": -28.4,
+        "chex": 15.7,
+        "net_gamma": -380.2,
+        "timestamp": "2026-03-28T09:30:00"
       },
       {
         "name": "GEX @ 5850",
         "level_id": "EXP-2026-0002",
-        "strike_price": 6500.0,
-        "gex": 758.32,
-        "dex": 474.26,
-        "vex": 625.86,
-        "chex": 12.58,
-        "net_gamma": 204.6,
-        "timestamp": "2025-07-15T13:45:00"
+        "strike_price": 5850,
+        "gex": 620.3,
+        "dex": -85.6,
+        "vex": 38.9,
+        "chex": -22.5,
+        "net_gamma": 550.1,
+        "timestamp": "2026-03-28T09:30:00"
       },
       {
         "name": "GEX @ 5700",
-        "level_id": "EXP-2024-0003",
-        "strike_price": 6500.0,
-        "gex": 981.99,
-        "dex": 818.04,
-        "vex": 994.12,
-        "chex": 620.48,
-        "net_gamma": 302.52,
-        "timestamp": "2025-06-07T10:15:00"
+        "level_id": "EXP-2026-0003",
+        "strike_price": 5700,
+        "gex": -680.2,
+        "dex": 340.8,
+        "vex": -52.1,
+        "chex": 28.3,
+        "net_gamma": -610.5,
+        "timestamp": "2026-03-28T09:30:00"
       },
       {
-        "name": "DEX @ 5800",
-        "level_id": "EXP-2025-0004",
-        "strike_price": 6500.0,
-        "gex": 941.38,
-        "dex": 830.41,
-        "vex": 596.1,
-        "chex": 483.39,
-        "net_gamma": 656.4,
-        "timestamp": "2025-08-25T12:45:00"
+        "name": "GEX @ 5900",
+        "level_id": "EXP-2026-0004",
+        "strike_price": 5900,
+        "gex": 280.4,
+        "dex": -42.1,
+        "vex": 18.6,
+        "chex": -10.2,
+        "net_gamma": 245.8,
+        "timestamp": "2026-03-28T09:30:00"
       }
     ],
     "Regime": [
       {
         "name": "Positive Gamma Regime",
-        "regime_id": "REG-2025-0000",
+        "regime_id": "REG-2026-0000",
         "classification": "positive_gamma",
         "description": "Positive Gamma Regime, a regime relevant to options intelligence operations.",
-        "gex_value": 500.0,
-        "flip_level": 226.83,
-        "detected_at": "2025-01-15T15:00:00"
+        "gex_value": 185.4,
+        "flip_level": 5780.0,
+        "detected_at": "2026-03-28T09:45:00"
       },
       {
         "name": "Negative Gamma Regime",
-        "regime_id": "REG-2025-0001",
+        "regime_id": "REG-2026-0001",
         "classification": "negative_gamma",
         "description": "Regime Negative Gamma Regime \u2014 part of the options intelligence knowledge graph.",
-        "gex_value": 500.0,
-        "flip_level": 769.49,
-        "detected_at": "2025-08-13T10:45:00"
+        "gex_value": -142.8,
+        "flip_level": 5780.0,
+        "detected_at": "2026-03-25T10:15:00"
       },
       {
         "name": "Transition Regime",
-        "regime_id": "REG-2025-0002",
+        "regime_id": "REG-2026-0002",
         "classification": "transition",
         "description": "Transition Regime is a regime tracked within the options intelligence domain.",
-        "gex_value": 500.0,
-        "flip_level": 975.69,
-        "detected_at": "2024-05-31T13:45:00"
+        "gex_value": 12.3,
+        "flip_level": 5785.0,
+        "detected_at": "2026-03-27T14:30:00"
       },
       {
         "name": "Neutral Regime",
-        "regime_id": "REG-2025-0003",
+        "regime_id": "REG-2026-0003",
         "classification": "neutral",
         "description": "Neutral Regime, a regime relevant to options intelligence operations.",
-        "gex_value": 500.0,
-        "flip_level": 466.6,
-        "detected_at": "2026-04-02T10:45:00"
+        "gex_value": 5.8,
+        "flip_level": 5790.0,
+        "detected_at": "2026-03-20T11:00:00"
       },
       {
         "name": "Post-FOMC Positive Gamma",
         "regime_id": "REG-2026-0004",
         "classification": "positive_gamma",
         "description": "Regime Post-FOMC Positive Gamma \u2014 part of the options intelligence knowledge graph.",
-        "gex_value": 500.0,
-        "flip_level": 263.18,
-        "detected_at": "2024-10-24T12:45:00"
+        "gex_value": 245.6,
+        "flip_level": 5770.0,
+        "detected_at": "2026-03-19T14:30:00"
       }
     ],
     "KeyLevel": [
       {
         "name": "SPX Put Wall 5700",
-        "level_id": "KLV-2024-0000",
-        "price": 10000.0,
-        "level_type": "support",
-        "strength": 100.0,
+        "level_id": "KLV-2026-0000",
+        "price": 5700.0,
+        "level_type": "put_wall",
+        "strength": 85.2,
         "source": "gex"
       },
       {
         "name": "SPX Call Wall 5850",
-        "level_id": "KLV-2024-0001",
-        "price": 10000.0,
-        "level_type": "resistance",
-        "strength": 100.0,
-        "source": "dex"
+        "level_id": "KLV-2026-0001",
+        "price": 5850.0,
+        "level_type": "call_wall",
+        "strength": 72.8,
+        "source": "gex"
       },
       {
         "name": "SPX Gamma Flip 5780",
         "level_id": "KLV-2026-0002",
-        "price": 10000.0,
-        "level_type": "magnet",
-        "strength": 100.0,
-        "source": "open_interest"
+        "price": 5780.0,
+        "level_type": "gamma_flip",
+        "strength": 95.0,
+        "source": "gex"
       },
       {
         "name": "SPX Magnet 5800",
-        "level_id": "KLV-2024-0003",
-        "price": 10000.0,
-        "level_type": "wall",
-        "strength": 100.0,
-        "source": "volume"
+        "level_id": "KLV-2026-0003",
+        "price": 5800.0,
+        "level_type": "magnet",
+        "strength": 68.4,
+        "source": "dex"
       },
       {
         "name": "SPY Put Wall 575",
-        "level_id": "KLV-2025-0004",
-        "price": 10000.0,
+        "level_id": "KLV-2026-0004",
+        "price": 575.0,
         "level_type": "put_wall",
-        "strength": 100.0,
+        "strength": 78.5,
         "source": "gex"
       }
     ],
@@ -411,59 +411,59 @@
         "name": "SPX 5800C Scalp Long",
         "trade_id": "TRD-2026-0000",
         "direction": "buy_to_open",
-        "quantity": 98,
-        "price": 10000.0,
+        "quantity": 5,
+        "price": 24.8,
         "strategy": "directional",
-        "pnl": 365.78,
-        "executed_at": "2025-02-19T09:00:00"
+        "pnl": 340.0,
+        "executed_at": "2026-03-28T09:35:00"
       },
       {
         "name": "SPX 5750P Directional Short",
-        "trade_id": "TRD-2025-0001",
+        "trade_id": "TRD-2026-0001",
         "direction": "sell_to_open",
-        "quantity": 63,
-        "price": 10000.0,
-        "strategy": "spread",
-        "pnl": 933.76,
-        "executed_at": "2024-09-19T08:15:00"
+        "quantity": 3,
+        "price": 12.2,
+        "strategy": "directional",
+        "pnl": -180.0,
+        "executed_at": "2026-03-28T10:15:00"
       },
       {
         "name": "SPY Iron Condor 575-585",
-        "trade_id": "TRD-2025-0002",
-        "direction": "buy_to_close",
-        "quantity": 51,
-        "price": 10000.0,
-        "strategy": "straddle",
-        "pnl": 891.68,
-        "executed_at": "2025-12-30T08:00:00"
+        "trade_id": "TRD-2026-0002",
+        "direction": "sell_to_open",
+        "quantity": 10,
+        "price": 1.85,
+        "strategy": "iron_condor",
+        "pnl": 925.0,
+        "executed_at": "2026-03-27T09:45:00"
       },
       {
         "name": "QQQ Straddle 500",
-        "trade_id": "TRD-2024-0003",
-        "direction": "sell_to_close",
-        "quantity": 82,
-        "price": 10000.0,
-        "strategy": "strangle",
-        "pnl": 91.87,
-        "executed_at": "2026-05-20T14:15:00"
+        "trade_id": "TRD-2026-0003",
+        "direction": "buy_to_open",
+        "quantity": 8,
+        "price": 6.4,
+        "strategy": "straddle",
+        "pnl": -512.0,
+        "executed_at": "2026-03-26T10:00:00"
       },
       {
         "name": "SPX Butterfly 5780-5800-5820",
-        "trade_id": "TRD-2025-0004",
+        "trade_id": "TRD-2026-0004",
         "direction": "buy_to_open",
-        "quantity": 43,
-        "price": 10000.0,
-        "strategy": "iron_condor",
-        "pnl": 170.68,
-        "executed_at": "2024-08-08T08:30:00"
+        "quantity": 5,
+        "price": 3.5,
+        "strategy": "butterfly",
+        "pnl": 1250.0,
+        "executed_at": "2026-03-28T11:30:00"
       }
     ],
     "MarketEvent": [
       {
         "name": "FOMC Rate Decision Jan 2026",
-        "event_id": "MEV-2025-0000",
+        "event_id": "MEV-2026-0000",
         "event_type": "fomc",
-        "scheduled_at": "2024-08-29T12:15:00",
+        "scheduled_at": "2026-01-29T14:00:00",
         "impact": "high",
         "description": "FOMC Rate Decision Jan 2026, a marketevent relevant to options intelligence operations."
       },
@@ -471,31 +471,31 @@
         "name": "CPI Release Feb 2026",
         "event_id": "MEV-2026-0001",
         "event_type": "cpi",
-        "scheduled_at": "2024-01-27T08:00:00",
-        "impact": "medium",
+        "scheduled_at": "2026-02-12T08:30:00",
+        "impact": "high",
         "description": "MarketEvent CPI Release Feb 2026 \u2014 part of the options intelligence knowledge graph."
       },
       {
         "name": "NFP Report Jan 2026",
-        "event_id": "MEV-2025-0002",
-        "event_type": "ppi",
-        "scheduled_at": "2024-05-22T11:00:00",
-        "impact": "low",
+        "event_id": "MEV-2026-0002",
+        "event_type": "nfp",
+        "scheduled_at": "2026-01-09T08:30:00",
+        "impact": "high",
         "description": "NFP Report Jan 2026 is a marketevent tracked within the options intelligence domain."
       },
       {
         "name": "NVIDIA Earnings Q4 2025",
-        "event_id": "MEV-2024-0003",
-        "event_type": "nfp",
-        "scheduled_at": "2024-05-02T15:00:00",
-        "impact": "high",
+        "event_id": "MEV-2026-0003",
+        "event_type": "earnings",
+        "scheduled_at": "2026-02-26T16:00:00",
+        "impact": "medium",
         "description": "NVIDIA Earnings Q4 2025, a marketevent relevant to options intelligence operations."
       },
       {
         "name": "Monthly OpEx Jan 2026",
-        "event_id": "MEV-2025-0004",
-        "event_type": "earnings",
-        "scheduled_at": "2025-10-09T08:30:00",
+        "event_id": "MEV-2026-0004",
+        "event_type": "opex",
+        "scheduled_at": "2026-01-16T16:00:00",
         "impact": "medium",
         "description": "MarketEvent Monthly OpEx Jan 2026 \u2014 part of the options intelligence knowledge graph."
       }
@@ -503,53 +503,53 @@
     "Strategy": [
       {
         "name": "0DTE Gamma Scalp",
-        "strategy_id": "STG-2024-0000",
+        "strategy_id": "STG-2026-0000",
         "strategy_type": "directional",
         "edge_description": "0DTE Gamma Scalp - Edge Description",
-        "win_rate": 0.28,
-        "avg_return": 100.0,
-        "max_loss": 619.22,
+        "win_rate": 0.62,
+        "avg_return": 8.5,
+        "max_loss": 500.0,
         "regime_preference": "positive_gamma"
       },
       {
         "name": "Negative Gamma Mean Reversion",
-        "strategy_id": "STG-2025-0001",
-        "strategy_type": "neutral",
+        "strategy_id": "STG-2026-0001",
+        "strategy_type": "mean_reversion",
         "edge_description": "Negative Gamma Mean Reversion - Edge Description",
-        "win_rate": 0.89,
-        "avg_return": 100.0,
-        "max_loss": 895.54,
+        "win_rate": 0.48,
+        "avg_return": 15.2,
+        "max_loss": 800.0,
         "regime_preference": "negative_gamma"
       },
       {
         "name": "Put Wall Bounce",
-        "strategy_id": "STG-2025-0002",
-        "strategy_type": "volatility",
+        "strategy_id": "STG-2026-0002",
+        "strategy_type": "momentum",
         "edge_description": "Put Wall Bounce - Edge Description",
-        "win_rate": 0.45,
-        "avg_return": 78.34,
-        "max_loss": 715.32,
-        "regime_preference": "any"
-      },
-      {
-        "name": "Call Wall Fade",
-        "strategy_id": "STG-2026-0003",
-        "strategy_type": "mean_reversion",
-        "edge_description": "Call Wall Fade - Edge Description",
-        "win_rate": 0.96,
-        "avg_return": 100.0,
-        "max_loss": 324.63,
+        "win_rate": 0.71,
+        "avg_return": 6.8,
+        "max_loss": 350.0,
         "regime_preference": "positive_gamma"
       },
       {
         "name": "FOMC Straddle",
-        "strategy_id": "STG-2024-0004",
-        "strategy_type": "momentum",
+        "strategy_id": "STG-2026-0003",
+        "strategy_type": "volatility",
         "edge_description": "FOMC Straddle - Edge Description",
-        "win_rate": 0.88,
-        "avg_return": 100.0,
-        "max_loss": 910.18,
-        "regime_preference": "negative_gamma"
+        "win_rate": 0.55,
+        "avg_return": 22.4,
+        "max_loss": 1200.0,
+        "regime_preference": "any"
+      },
+      {
+        "name": "Pin Risk Butterfly",
+        "strategy_id": "STG-2026-0004",
+        "strategy_type": "neutral",
+        "edge_description": "Pin Risk Butterfly - Edge Description",
+        "win_rate": 0.38,
+        "avg_return": 45.0,
+        "max_loss": 175.0,
+        "regime_preference": "positive_gamma"
       }
     ]
   },
@@ -720,14 +720,14 @@
       "source_label": "Underlying",
       "source_name": "S&P 500 Index",
       "target_label": "OptionsContract",
-      "target_name": "SPY 580C Weekly"
+      "target_name": "SPX 5800C 0DTE"
     },
     {
       "type": "HAS_OPTION",
       "source_label": "Underlying",
       "source_name": "S&P 500 Index",
       "target_label": "OptionsContract",
-      "target_name": "SPY 575P Weekly"
+      "target_name": "SPX 5750P 0DTE"
     },
     {
       "type": "HAS_OPTION",
@@ -755,14 +755,14 @@
       "source_label": "Underlying",
       "source_name": "iShares Russell 2000",
       "target_label": "OptionsContract",
-      "target_name": "SPY 575P Weekly"
+      "target_name": "SPX 5750P 0DTE"
     },
     {
       "type": "HAS_OPTION",
       "source_label": "Underlying",
       "source_name": "Apple Inc",
       "target_label": "OptionsContract",
-      "target_name": "SPX 5750P 0DTE"
+      "target_name": "AAPL 230P Weekly"
     },
     {
       "type": "EXPOSURE_AT",
@@ -979,63 +979,42 @@
       "source_label": "Trade",
       "source_name": "SPX 5800C Scalp Long",
       "target_label": "OptionsContract",
-      "target_name": "QQQ 500C 0DTE"
-    },
-    {
-      "type": "EXECUTES",
-      "source_label": "Trade",
-      "source_name": "SPX 5750P Directional Short",
-      "target_label": "OptionsContract",
-      "target_name": "SPY 575P Weekly"
-    },
-    {
-      "type": "EXECUTES",
-      "source_label": "Trade",
-      "source_name": "SPX 5750P Directional Short",
-      "target_label": "OptionsContract",
-      "target_name": "SPY 580C Weekly"
-    },
-    {
-      "type": "EXECUTES",
-      "source_label": "Trade",
-      "source_name": "SPY Iron Condor 575-585",
-      "target_label": "OptionsContract",
-      "target_name": "SPY 580C Weekly"
-    },
-    {
-      "type": "EXECUTES",
-      "source_label": "Trade",
-      "source_name": "SPY Iron Condor 575-585",
-      "target_label": "OptionsContract",
-      "target_name": "SPX 5750P 0DTE"
-    },
-    {
-      "type": "EXECUTES",
-      "source_label": "Trade",
-      "source_name": "QQQ Straddle 500",
-      "target_label": "OptionsContract",
       "target_name": "SPX 5800C 0DTE"
     },
     {
       "type": "EXECUTES",
       "source_label": "Trade",
-      "source_name": "QQQ Straddle 500",
-      "target_label": "OptionsContract",
-      "target_name": "SPY 575P Weekly"
-    },
-    {
-      "type": "EXECUTES",
-      "source_label": "Trade",
-      "source_name": "SPX Butterfly 5780-5800-5820",
+      "source_name": "SPX 5750P Directional Short",
       "target_label": "OptionsContract",
       "target_name": "SPX 5750P 0DTE"
     },
     {
       "type": "EXECUTES",
       "source_label": "Trade",
-      "source_name": "SPX Butterfly 5780-5800-5820",
+      "source_name": "SPY Iron Condor 575-585",
       "target_label": "OptionsContract",
       "target_name": "SPY 580C Weekly"
+    },
+    {
+      "type": "EXECUTES",
+      "source_label": "Trade",
+      "source_name": "SPY Iron Condor 575-585",
+      "target_label": "OptionsContract",
+      "target_name": "SPX 5750P 0DTE"
+    },
+    {
+      "type": "EXECUTES",
+      "source_label": "Trade",
+      "source_name": "QQQ Straddle 500",
+      "target_label": "OptionsContract",
+      "target_name": "QQQ 500C 0DTE"
+    },
+    {
+      "type": "EXECUTES",
+      "source_label": "Trade",
+      "source_name": "SPX Butterfly 5780-5800-5820",
+      "target_label": "OptionsContract",
+      "target_name": "SPX 5800C 0DTE"
     },
     {
       "type": "TRIGGERED_BY",
@@ -1098,7 +1077,7 @@
       "source_label": "Trade",
       "source_name": "SPX 5800C Scalp Long",
       "target_label": "Strategy",
-      "target_name": "FOMC Straddle"
+      "target_name": "0DTE Gamma Scalp"
     },
     {
       "type": "USES_STRATEGY",
@@ -1126,7 +1105,7 @@
       "source_label": "Trade",
       "source_name": "QQQ Straddle 500",
       "target_label": "Strategy",
-      "target_name": "Negative Gamma Mean Reversion"
+      "target_name": "FOMC Straddle"
     },
     {
       "type": "USES_STRATEGY",
@@ -1140,7 +1119,7 @@
       "source_label": "Trade",
       "source_name": "SPX Butterfly 5780-5800-5820",
       "target_label": "Strategy",
-      "target_name": "FOMC Straddle"
+      "target_name": "Pin Risk Butterfly"
     },
     {
       "type": "FLIPPED_TO",
@@ -1306,7 +1285,7 @@
     {
       "type": "OPTIMAL_IN",
       "source_label": "Strategy",
-      "source_name": "Call Wall Fade",
+      "source_name": "Pin Risk Butterfly",
       "target_label": "Regime",
       "target_name": "Post-FOMC Positive Gamma"
     },
@@ -1476,7 +1455,7 @@
       "template_id": "trade_journal",
       "template_name": "Trade Journal Entry",
       "title": "Trade Journal Entry: QQQ Straddle 500",
-      "content": "# Trade Journal Entry\n\n**Date:** 2025-08-05  \n**Domain:** Options Intelligence  \n**Reference:** Trade: QQQ Straddle 500, OptionsContract: SPY 575P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime\n\n## Summary\n\nThis trade journal entry documents detailed trade review with entry, exit, and lessons learned. It pertains to Trade: QQQ Straddle 500, OptionsContract: SPY 575P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime and was prepared as part of standard options intelligence operations.\n\n## Details\n\nThe following information has been compiled based on available records and observations. All referenced entities have been verified against the current knowledge graph.\n\nKey findings and observations related to Trade: QQQ Straddle 500, OptionsContract: SPY 575P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime are documented below. This record should be reviewed in conjunction with related documents and entity records for complete context.\n\n## Recommendations\n\nBased on the analysis of Trade: QQQ Straddle 500, OptionsContract: SPY 575P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime, the following actions are recommended for continued monitoring and follow-up. Please refer to the relevant entity profiles and prior trade journal entry records for historical context and trend analysis.\n\n---\n\n*Document generated for Options Intelligence context graph application.*"
+      "content": "# Trade Journal Entry\n\n**Date:** 2025-08-05  \n**Domain:** Options Intelligence  \n**Reference:** Trade: QQQ Straddle 500, OptionsContract: AAPL 230P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime\n\n## Summary\n\nThis trade journal entry documents detailed trade review with entry, exit, and lessons learned. It pertains to Trade: QQQ Straddle 500, OptionsContract: AAPL 230P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime and was prepared as part of standard options intelligence operations.\n\n## Details\n\nThe following information has been compiled based on available records and observations. All referenced entities have been verified against the current knowledge graph.\n\nKey findings and observations related to Trade: QQQ Straddle 500, OptionsContract: AAPL 230P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime are documented below. This record should be reviewed in conjunction with related documents and entity records for complete context.\n\n## Recommendations\n\nBased on the analysis of Trade: QQQ Straddle 500, OptionsContract: AAPL 230P Weekly, Underlying: iShares Russell 2000, Regime: Neutral Regime, the following actions are recommended for continued monitoring and follow-up. Please refer to the relevant entity profiles and prior trade journal entry records for historical context and trend analysis.\n\n---\n\n*Document generated for Options Intelligence context graph application.*"
     },
     {
       "template_id": "trade_journal",
@@ -1542,7 +1521,7 @@
       "template_id": "exposure_report",
       "template_name": "Dealer Exposure Report",
       "title": "Dealer Exposure Report: Apple Inc",
-      "content": "# Dealer Exposure Report\n\n**Date:** 2026-04-19  \n**Domain:** Options Intelligence  \n**Reference:** Underlying: Apple Inc, ExposureLevel: DEX @ 5800, Regime: Post-FOMC Positive Gamma\n\n## Summary\n\nThis dealer exposure report documents breakdown of dealer gamma and delta exposure across strikes. It pertains to Underlying: Apple Inc, ExposureLevel: DEX @ 5800, Regime: Post-FOMC Positive Gamma and was prepared as part of standard options intelligence operations.\n\n## Details\n\nThe following information has been compiled based on available records and observations. All referenced entities have been verified against the current knowledge graph.\n\nKey findings and observations related to Underlying: Apple Inc, ExposureLevel: DEX @ 5800, Regime: Post-FOMC Positive Gamma are documented below. This record should be reviewed in conjunction with related documents and entity records for complete context.\n\n## Recommendations\n\nBased on the analysis of Underlying: Apple Inc, ExposureLevel: DEX @ 5800, Regime: Post-FOMC Positive Gamma, the following actions are recommended for continued monitoring and follow-up. Please refer to the relevant entity profiles and prior dealer exposure report records for historical context and trend analysis.\n\n---\n\n*Document generated for Options Intelligence context graph application.*"
+      "content": "# Dealer Exposure Report\n\n**Date:** 2026-04-19  \n**Domain:** Options Intelligence  \n**Reference:** Underlying: Apple Inc, ExposureLevel: GEX @ 5900, Regime: Post-FOMC Positive Gamma\n\n## Summary\n\nThis dealer exposure report documents breakdown of dealer gamma and delta exposure across strikes. It pertains to Underlying: Apple Inc, ExposureLevel: GEX @ 5900, Regime: Post-FOMC Positive Gamma and was prepared as part of standard options intelligence operations.\n\n## Details\n\nThe following information has been compiled based on available records and observations. All referenced entities have been verified against the current knowledge graph.\n\nKey findings and observations related to Underlying: Apple Inc, ExposureLevel: GEX @ 5900, Regime: Post-FOMC Positive Gamma are documented below. This record should be reviewed in conjunction with related documents and entity records for complete context.\n\n## Recommendations\n\nBased on the analysis of Underlying: Apple Inc, ExposureLevel: GEX @ 5900, Regime: Post-FOMC Positive Gamma, the following actions are recommended for continued monitoring and follow-up. Please refer to the relevant entity profiles and prior dealer exposure report records for historical context and trend analysis.\n\n---\n\n*Document generated for Options Intelligence context graph application.*"
     },
     {
       "template_id": "strategy_playbook",
@@ -1565,8 +1544,8 @@
     {
       "template_id": "strategy_playbook",
       "template_name": "Strategy Playbook",
-      "title": "Strategy Playbook: Call Wall Fade",
-      "content": "# Strategy Playbook\n\n**Date:** 2025-04-03  \n**Domain:** Options Intelligence  \n**Reference:** Strategy: Call Wall Fade, Regime: Neutral Regime\n\n## Summary\n\nThis strategy playbook documents strategy documentation with edge, entry criteria, and risk rules. It pertains to Strategy: Call Wall Fade, Regime: Neutral Regime and was prepared as part of standard options intelligence operations.\n\n## Details\n\nThe following information has been compiled based on available records and observations. All referenced entities have been verified against the current knowledge graph.\n\nKey findings and observations related to Strategy: Call Wall Fade, Regime: Neutral Regime are documented below. This record should be reviewed in conjunction with related documents and entity records for complete context.\n\n## Recommendations\n\nBased on the analysis of Strategy: Call Wall Fade, Regime: Neutral Regime, the following actions are recommended for continued monitoring and follow-up. Please refer to the relevant entity profiles and prior strategy playbook records for historical context and trend analysis.\n\n---\n\n*Document generated for Options Intelligence context graph application.*"
+      "title": "Strategy Playbook: Pin Risk Butterfly",
+      "content": "# Strategy Playbook\n\n**Date:** 2025-04-03  \n**Domain:** Options Intelligence  \n**Reference:** Strategy: Pin Risk Butterfly, Regime: Neutral Regime\n\n## Summary\n\nThis strategy playbook documents strategy documentation with edge, entry criteria, and risk rules. It pertains to Strategy: Pin Risk Butterfly, Regime: Neutral Regime and was prepared as part of standard options intelligence operations.\n\n## Details\n\nThe following information has been compiled based on available records and observations. All referenced entities have been verified against the current knowledge graph.\n\nKey findings and observations related to Strategy: Pin Risk Butterfly, Regime: Neutral Regime are documented below. This record should be reviewed in conjunction with related documents and entity records for complete context.\n\n## Recommendations\n\nBased on the analysis of Strategy: Pin Risk Butterfly, Regime: Neutral Regime, the following actions are recommended for continued monitoring and follow-up. Please refer to the relevant entity profiles and prior strategy playbook records for historical context and trend analysis.\n\n---\n\n*Document generated for Options Intelligence context graph application.*"
     },
     {
       "template_id": "strategy_playbook",
@@ -1730,7 +1709,7 @@
         {
           "thought": "Identify patterns \u2014 which setups worked and which failed",
           "action": "Group trades by strategy and regime, calculate win rates",
-          "observation": "Analysis of SPY 575P Weekly complete. Key metrics computed and compared against historical baselines \u2014 5 indicators flagged for review."
+          "observation": "Analysis of AAPL 230P Weekly complete. Key metrics computed and compared against historical baselines \u2014 5 indicators flagged for review."
         },
         {
           "thought": "Document lessons and adjustments for tomorrow",
@@ -1747,7 +1726,7 @@
         {
           "thought": "Identify the optimal short strike based on dealer positioning",
           "action": "Query exposure levels to find strikes with highest GEX concentration",
-          "observation": "Found 10 relevant records in the options intelligence knowledge graph. Top result: DEX @ 5800 with 4 connected entities."
+          "observation": "Found 10 relevant records in the options intelligence knowledge graph. Top result: GEX @ 5900 with 4 connected entities."
         },
         {
           "thought": "Determine wing width based on current implied volatility",

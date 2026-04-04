@@ -570,7 +570,7 @@ agent_tools:
     parameters:
       - name: strategy_type
         type: string
-        description: "Strategy type: directional, spread, straddle, strangle, iron_condor, butterfly, scalp"
+        description: "Strategy type: directional, neutral, volatility, mean_reversion, momentum, scalp"
 
   - name: get_upcoming_events
     description: Get upcoming market events that may impact options pricing
