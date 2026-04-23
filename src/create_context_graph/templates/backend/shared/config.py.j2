@@ -23,6 +23,9 @@ class Settings(BaseSettings):
     github_issues_limit: int = 0  # 0 = use github_limit
     github_prs_limit: int = 0
     github_commits_limit: int = 0
+    github_import_body: bool = True
+    github_link_issues_prs: bool = True
+    github_link_source: str = "both"  # regex | graphql | both
 {% endif %}
 
 {% if 'notion' in saas_connectors %}

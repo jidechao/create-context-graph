@@ -30,6 +30,9 @@ GITHUB_LIMIT=20                    # Default max for issues, PRs, and commits
 # GITHUB_ISSUES_LIMIT=20           # Override GITHUB_LIMIT for issues only
 # GITHUB_PRS_LIMIT=20              # Override GITHUB_LIMIT for pull requests only
 # GITHUB_COMMITS_LIMIT=20          # Override GITHUB_LIMIT for commits only
+GITHUB_IMPORT_BODY=true            # Store issue/PR bodies as Documents
+GITHUB_LINK_ISSUES_PRS=true        # Detect CLOSES/REFERENCES links between issues, PRs, and commits
+GITHUB_LINK_SOURCE=both            # regex | graphql | both (regex scans bodies; graphql queries closingIssuesReferences per PR)
 {% endif %}
 {% if 'notion' in saas_connectors %}
 # Notion (knowledge base import)

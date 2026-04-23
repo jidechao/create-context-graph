@@ -58,6 +58,9 @@ def main():
             "issues_limit": settings.github_issues_limit or settings.github_limit,
             "prs_limit": settings.github_prs_limit or settings.github_limit,
             "commits_limit": settings.github_commits_limit or settings.github_limit,
+            "import_body": settings.github_import_body,
+            "link_issues_prs": settings.github_link_issues_prs,
+            "link_source": settings.github_link_source,
         }))
 {% endraw %}{% elif conn == 'notion' %}{% raw %}
     if settings.notion_token:
