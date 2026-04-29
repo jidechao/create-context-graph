@@ -3,7 +3,7 @@
  * Update this file when domains, frameworks, or branding changes.
  */
 
-// --- Domain data (22 domains) ---
+// --- Domain data (23 domains) ---
 
 export interface DomainInfo {
   id: string;
@@ -183,7 +183,7 @@ export const HERO_COPY = {
 export const SECTION_COPY = {
   appPreview: "See what you'll build",
   contextGraph: "Three memory types. One connected graph.",
-  domains: "22 domains. Your industry, ready to go.",
+  domains: "23 domains. Your industry, ready to go.",
   frameworks: "Bring your favorite agent framework.",
   howItWorks: "From zero to running app in 4 commands.",
   trustBar: "",

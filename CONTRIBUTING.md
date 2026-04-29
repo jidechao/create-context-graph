@@ -46,7 +46,7 @@ pytest tests/ -v
 # Fast tests (no Neo4j or API keys required)
 pytest tests/ -v                # ~182 tests, ~5 seconds
 
-# Full matrix (all 22 domains x 8 frameworks = 176 combos)
+# Full matrix (all 23 domains x 8 frameworks = 184 combos)
 pytest tests/ -v --slow         # ~358 tests, ~30 seconds
 ```
 

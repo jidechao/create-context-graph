@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Regenerate all 22 fixture files using Claude API for high-quality demo data.
+"""Regenerate all 23 fixture files using Claude API for high-quality demo data.
 
 This is a one-time dev tool — NOT part of the installed package.
 Run with: ANTHROPIC_API_KEY=$KEY python scripts/regenerate_fixtures.py

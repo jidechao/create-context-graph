@@ -14,7 +14,7 @@
 
 """Full domain x framework matrix test.
 
-Tests all 176 combinations (22 domains x 8 frameworks) to ensure
+Tests all 184 combinations (23 domains x 8 frameworks) to ensure
 every scaffold generates successfully. Marked as slow — run with --slow.
 """
 

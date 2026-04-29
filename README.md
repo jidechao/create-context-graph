@@ -387,7 +387,7 @@ python scripts/e2e_smoke_test.py --domain financial-services --framework pydanti
 python scripts/e2e_smoke_test.py --domain real-estate --framework google-adk --quick
 python scripts/e2e_smoke_test.py --domain trip-planning --framework strands --quick
 
-# Test all 22 domains with one framework
+# Test all 23 domains with one framework
 python scripts/e2e_smoke_test.py --all-domains --framework pydanticai --quick
 
 # Full mode (all prompts per scenario, not just first)

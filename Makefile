@@ -76,7 +76,7 @@ scaffold-clean:  ## Remove test scaffold
 
 ## Data
 
-regenerate-fixtures:  ## Regenerate all 22 fixture files with Claude API (requires ANTHROPIC_API_KEY)
+regenerate-fixtures:  ## Regenerate all 23 fixture files with Claude API (requires ANTHROPIC_API_KEY)
 	uv run python scripts/regenerate_fixtures.py
 
 ## Cleanup

@@ -482,7 +482,7 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="E2E smoke test for create-context-graph")
     parser.add_argument("--domain", help="Domain to test (e.g., healthcare)")
     parser.add_argument("--framework", default="pydanticai", help="Agent framework (default: pydanticai)")
-    parser.add_argument("--all-domains", action="store_true", help="Test all 22 domains")
+    parser.add_argument("--all-domains", action="store_true", help="Test all 23 domains")
     parser.add_argument("--quick", action="store_true", help="Only test first prompt per scenario")
     parser.add_argument("--browser", action="store_true", help="Also run Playwright browser tests")
     args = parser.parse_args()

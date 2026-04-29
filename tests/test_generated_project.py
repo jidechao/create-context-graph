@@ -1720,8 +1720,8 @@ class TestV061DataQuality:
             val = generate_property_value("industry", "string", "Test Org", "Organization", i, domain_id="healthcare")
             assert val != "Technology", f"Healthcare industry should not be 'Technology', got: {val}"
 
-    def test_industry_all_22_domains_have_pools(self):
-        """All 22 domains should have entries in DOMAIN_INDUSTRY_POOL."""
+    def test_industry_all_domains_have_pools(self):
+        """All 23 domains should have entries in DOMAIN_INDUSTRY_POOL."""
         from create_context_graph.name_pools import DOMAIN_INDUSTRY_POOL
         from create_context_graph.ontology import list_available_domains
         domains = list_available_domains()

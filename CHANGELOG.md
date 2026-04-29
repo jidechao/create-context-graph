@@ -1,5 +1,28 @@
 # Changelog
 
+## v0.9.5 — Options Intelligence Domain & GitHub Connector Enhancements (2026-04-29)
+
+### New Domain
+- **options-intelligence** (23rd domain) — Options market intelligence covering 0DTE analysis, dealer positioning (GEX/DEX/VEX/CHEX), gamma regime classification, key levels, and trading strategies. 8 entity types (Underlying, OptionsContract, ExposureLevel, Regime, KeyLevel, Trade, MarketEvent, Strategy), 17 relationships (HAS_OPTION, EXPOSURE_AT, IN_REGIME, TRIGGERED_BY, FLIPPED_TO, PRECEDED_BY, etc.), 10 agent tools (`get_regime`, `get_key_levels`, `get_exposure_by_strike`, `get_trades_by_strategy`, etc.), 5 document templates (market briefs, trade journals, regime analysis), 9 decision traces (trade entry, regime flip, level breach, VIX spike, etc.), 4 demo scenarios. Pre-generated fixture: 65 entities, 125 relationships, 25 documents. 17 new property clamp ranges in `generator.py` for options-specific values (delta `[-1, 1]`, gamma `[0, 0.15]`, IV `[0.05, 2.0]`, strike, GEX, etc.). 8 label-specific name pools and ID prefixes added in `name_pools.py`. Tickers (SPX, SPY, QQQ, IWM, AAPL) added to the global `_TICKER_POOL`.
+
+### GitHub Connector Enhancements
+- **Configurable per-resource limits** — `GITHUB_LIMIT=20` sets the default cap for issues, PRs, and commits. Override individually with `GITHUB_ISSUES_LIMIT`, `GITHUB_PRS_LIMIT`, `GITHUB_COMMITS_LIMIT`. Pagination now uses `itertools.islice` to stream results instead of materializing full pages.
+- **Issue/PR body import toggle** — `GITHUB_IMPORT_BODY=true` (default) controls whether issue and PR bodies are imported as `Document` nodes. Issue/PR bodies are now labeled "Body" rather than "Document" to better reflect their source.
+- **Cross-link issues, PRs, and commits** — `GITHUB_LINK_ISSUES_PRS=true` (default) creates `CLOSES` and `REFERENCES` edges between commits, issues, and PRs. Regex matches `(close|closes|closed|fix|fixes|fixed|resolve|resolves|resolved) #N` → `CLOSES`; bare `#N` → `REFERENCES`. GraphQL `closingIssuesReferences` provides authoritative PR closures. `GITHUB_LINK_SOURCE=both` selects `regex` / `graphql` / `both` (falls back to `both` on invalid values). `CLOSES` takes precedence over `REFERENCES` for the same pair, regex and GraphQL results are deduped, and references to numbers outside the fetched set are silently skipped. GraphQL failures log a warning and return empty rather than hard-failing.
+
+### Bug Fixes
+- **Connector relationship field names** — All 7 connectors (GitHub, Notion, Jira, Slack, Gmail, Google Calendar, Salesforce) now emit `source_name`/`target_name` in relationship dicts (was `source`/`target`), aligning with the ingest schema.
+- **Generated `config.py` Settings fields** — Added env-var fields for all 7 connectors (GitHub, Notion, Jira, Slack, Salesforce, Linear, etc.) so credentials and toggles are honored. Previously silently dropped by `extra: "ignore"`.
+- **Generated `pyproject.toml`** — Added connector package dependencies (`PyGithub`, `notion-client`, `atlassian-python-api`, `slack-sdk`, etc.) so generated projects install required SDKs.
+- **`memory.py.j2` boolean rendering** — Switched `| tojson` to `| capitalize` so Jinja-emitted booleans render as Python `True`/`False` rather than JSON `true`/`false`.
+- **CLI command/comment alignment** — Fixed inconsistent spacing in CLI help output so commands and comments line up.
+- **Test patch target for `is_connected`** — Tests now patch `app.main.is_connected` (where it's used after `from … import is_connected`) rather than `app.context_graph_client.is_connected` (where it's defined). Generated `test_routes.py` mock fixture also sets dummy API keys (`ANTHROPIC_API_KEY`, `OPENAI_API_KEY`, `GOOGLE_API_KEY`) before importing `app.main`, since PydanticAI's `Agent(...)` validates the key at module import time. Added regression guard `test_test_file_mocks_is_connected` in `tests/test_generated_project.py` so accidental removal is caught in the fast unit suite.
+- **options-intelligence fixture quality** — Rewrote fixture with consistent per-underlying scoping. Cross-underlying contamination eliminated (each Underlying now has scoped `OptionsContract`, `ExposureLevel`, `KeyLevel`). Strike scales realistic per underlying (SPX ~5800, SPY ~580, QQQ ~500, IWM ~212, AAPL ~230). Regime timestamps chronologically consistent with `FLIPPED_TO`/`PRECEDED_BY` edges. Document content references title entities. Decision-trace placeholders replaced with concrete values from fixture entities. Greeks normalized (delta `-1..1`, gamma `0..0.15`, proper put delta signs).
+
+### Improvements
+- **`make schema` target** — Added to the generated `Makefile`. Comments on `make seed` and `make import-and-seed` clarified.
+- **Tests** — 12 new tests for GitHub linking (regex/GraphQL/dedupe/precedence). 89 new tests for body-import toggle and configurable limits. 54 additional renderer tests covering connector field renames, memory boolean rendering, config Settings fields, and the new Makefile target.
+
 ## v0.9.4 — GitHub Actions release workflow bugfixes (2026-04-17)
 
 ### Bug Fixes
