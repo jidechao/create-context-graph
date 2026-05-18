@@ -1,44 +1,32 @@
 # Changelog
 
-## v0.11.4 — Generated `[dev]` extras + pre-release smoke-render target (2026-05-19)
+## v0.11.2 — Post-release stabilization + pre-release smoke-render target (2026-05-19)
+
+Rolls up three follow-up fixes surfaced by running v0.11.0/v0.11.1 end-to-end on a fresh machine, plus a durable safeguard against the same class of bugs.
 
 ### Bug Fixes
 
-- **`make test` in generated projects crashed** with `No module named pytest`. The generated `pyproject.toml` didn't declare pytest or httpx anywhere, so `uv sync` never installed them — the generated `tests/test_routes.py` scaffold couldn't run.
-- **Fix:** added `[project.optional-dependencies] dev = ["pytest>=8.0", "httpx>=0.27"]` to `pyproject.toml.j2`, and changed the generated Makefile's `install-backend` target from `uv sync` → `uv sync --extra dev`. Generated projects can now run `make test` out of the box.
+- **Full matrix + performance test suites broken on CI.** `test_matrix.py` (184 combos) and `test_performance.py` (23 domains) defined their own local `runner = CliRunner()` fixtures that bypassed the auto-`--self-hosted` shim added to `test_cli.py` in v0.11.0. With NAMS as the new default, every matrix/perf invocation hit the "NAMS API key required for non-interactive mode" guard and failed. 207 of 1,398 slow-suite tests failed on the v0.11.1 tag. **Fix:** moved `_AutoSelfHostedRunner` and the `runner` / `nams_runner` fixtures to `tests/conftest.py` so every test file inherits the auto-self-hosted behavior. Removed the now-duplicate fixtures from `test_cli.py`, `test_matrix.py`, and `test_performance.py`.
+
+- **`make install` crashed on NAMS scaffolds** with `No module named spacy`. The generated `Makefile`'s `install-backend` target unconditionally ran `python -m spacy download en_core_web_sm`, but spacy is only present in the `[extraction]` extra which NAMS scaffolds correctly omit (entity extraction happens server-side on NAMS). **Fix:** the `spacy download` line is now omitted entirely from NAMS scaffolds and guarded by an `import spacy` check on bolt scaffolds (so it stays robust even if the user uninstalls the extraction extras post-scaffold). Two regression tests added in `test_nams_adapter.py::TestBoltRenderedTemplates` (`test_makefile_skips_spacy_download_on_nams`, `test_makefile_guards_spacy_download_on_bolt`).
+
+- **`make test` in generated projects crashed** with `No module named pytest`. The generated `pyproject.toml` didn't declare pytest or httpx anywhere, so `uv sync` never installed them — the generated `tests/test_routes.py` scaffold couldn't run. **Fix:** added `[project.optional-dependencies] dev = ["pytest>=8.0", "httpx>=0.27"]` to `pyproject.toml.j2`, and changed the generated Makefile's `install-backend` target from `uv sync` → `uv sync --extra dev`. Generated projects can now run `make test` out of the box.
 
 ### New Tooling
 
 - **Root `make smoke-render` target** — full scaffold → install → import-check → run-generated-tests sweep for both backends, in `<1 min`, no Neo4j / NAMS / LLM keys required. Catches the class of breakage the mocked unit suite can't see:
   - dep-resolution failures (`uv sync` conflicts)
-  - install-time crashes (e.g. spacy download on NAMS — fixed in 0.11.3)
-  - import-time failures in generated `app.main` (e.g. questionary default validation — fixed in 0.11.1)
-  - generated test-scaffold regressions (e.g. missing pytest — fixed here)
+  - install-time crashes (e.g. spacy download on NAMS)
+  - import-time failures in generated `app.main` (e.g. questionary default validation, framework SDKs that validate API keys at module-load time)
+  - generated test-scaffold regressions
 - Sub-targets `make smoke-render-nams` and `make smoke-render-bolt` for per-backend runs. `make smoke-render-clean` removes the scratch directory (`/tmp/ccg-smoke-render` by default).
-- Both targets verified passing locally:
+- Verified passing locally:
   - NAMS: render → install (no spacy) → import-check → 2 generated tests pass
   - Bolt: render → install (with guarded spacy download) → import-check → 2 generated tests pass
 
 ### Process Note
 
-The string of patch releases (0.11.1 → 0.11.4) all surfaced from running the actual product end-to-end after release. Each fix was a class of issue the mocked unit suite couldn't catch by design. `make smoke-render` is the durable answer — run it before tagging.
-
-## v0.11.3 — Generated Makefile spacy-download fix (2026-05-19)
-
-### Bug Fixes
-
-- **`make install` crashed on NAMS scaffolds** with `No module named spacy`. The generated `Makefile`'s `install-backend` target unconditionally ran `python -m spacy download en_core_web_sm`, but spacy is only present in the `[extraction]` extra which NAMS scaffolds correctly omit (entity extraction happens server-side on NAMS).
-- **Fix:** the `spacy download` line is now omitted entirely from NAMS scaffolds and guarded by an `import spacy` check on bolt scaffolds (so it stays robust even if the user uninstalls the extraction extras post-scaffold). Two regression tests added in `test_nams_adapter.py::TestBoltRenderedTemplates`:
-  - `test_makefile_skips_spacy_download_on_nams` — asserts NAMS Makefiles contain only `uv sync`, no `spacy download`.
-  - `test_makefile_guards_spacy_download_on_bolt` — asserts bolt Makefiles include the import-check guard.
-
-## v0.11.2 — Matrix + perf test fix (2026-05-19)
-
-### Bug Fixes
-
-- **Full matrix + performance test suites broken on CI.** `test_matrix.py` (184 combos) and `test_performance.py` (23 domains) defined their own local `runner = CliRunner()` fixtures that bypassed the auto-`--self-hosted` shim added to `test_cli.py` in v0.11.0. With NAMS as the new default, every matrix/perf invocation hit the "NAMS API key required for non-interactive mode" guard and failed. 207 of 1,398 slow-suite tests failed on the v0.11.1 tag.
-- **Fix:** moved `_AutoSelfHostedRunner` and the `runner` / `nams_runner` fixtures to `tests/conftest.py` so every test file inherits the auto-self-hosted behavior. Removed the now-duplicate fixtures from `test_cli.py`, `test_matrix.py`, and `test_performance.py`.
-- **Verified:** full slow suite passes — 1,391 tests + 9 skipped, no failures.
+The three issues bundled here all surfaced from running the actual product end-to-end on a fresh machine after the v0.11.0/v0.11.1 tags. Each was a class of issue the mocked unit suite couldn't catch by design (CLI fixture bypass, install-time shell commands, generated-project deps). `make smoke-render` is the durable answer — run it before tagging future releases.
 
 ## v0.11.1 — Wizard framework-prompt fix (2026-05-19)
 
