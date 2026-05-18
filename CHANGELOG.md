@@ -1,5 +1,14 @@
 # Changelog
 
+## v0.11.3 — Generated Makefile spacy-download fix (2026-05-19)
+
+### Bug Fixes
+
+- **`make install` crashed on NAMS scaffolds** with `No module named spacy`. The generated `Makefile`'s `install-backend` target unconditionally ran `python -m spacy download en_core_web_sm`, but spacy is only present in the `[extraction]` extra which NAMS scaffolds correctly omit (entity extraction happens server-side on NAMS).
+- **Fix:** the `spacy download` line is now omitted entirely from NAMS scaffolds and guarded by an `import spacy` check on bolt scaffolds (so it stays robust even if the user uninstalls the extraction extras post-scaffold). Two regression tests added in `test_nams_adapter.py::TestBoltRenderedTemplates`:
+  - `test_makefile_skips_spacy_download_on_nams` — asserts NAMS Makefiles contain only `uv sync`, no `spacy download`.
+  - `test_makefile_guards_spacy_download_on_bolt` — asserts bolt Makefiles include the import-check guard.
+
 ## v0.11.2 — Matrix + perf test fix (2026-05-19)
 
 ### Bug Fixes

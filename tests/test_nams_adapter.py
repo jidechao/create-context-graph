@@ -312,6 +312,48 @@ class TestBoltRenderedTemplates:
         assert "fuzzy" in pkg
         assert "neo4j-agent-memory[litellm,sentence-transformers,extraction,fuzzy]" in pkg
 
+    def test_makefile_skips_spacy_download_on_nams(self, tmp_path):
+        """NAMS scaffolds must not run ``spacy download`` — spacy isn't installed.
+
+        Regression for 0.11.2: ``make install`` crashed on NAMS-default scaffolds
+        because the install-backend target unconditionally ran
+        ``python -m spacy download en_core_web_sm``, and spacy is only in the
+        ``[extraction]`` extra which NAMS scaffolds skip.
+        """
+        cfg = ProjectConfig(
+            project_name="NAMS Make Test",
+            domain="financial-services",
+            framework="strands",
+            nams_api_key="test-key-123",
+        )
+        out = tmp_path / "nams-make"
+        out.mkdir()
+        ProjectRenderer(cfg, load_domain(cfg.domain)).render(out)
+        makefile = (out / "Makefile").read_text()
+        # Find the install-backend rule body
+        install_block = makefile.split("install-backend:", 1)[1].split("\n\n", 1)[0]
+        assert "uv sync" in install_block
+        assert "spacy download" not in install_block, (
+            "NAMS scaffolds must not include spacy download — spacy isn't installed"
+        )
+
+    def test_makefile_guards_spacy_download_on_bolt(self, tmp_path):
+        """Bolt scaffolds may run spacy download, but only when spacy is importable."""
+        cfg = ProjectConfig(
+            project_name="Bolt Make Test",
+            domain="financial-services",
+            framework="pydanticai",
+            memory_backend="bolt",
+        )
+        out = tmp_path / "bolt-make"
+        out.mkdir()
+        ProjectRenderer(cfg, load_domain(cfg.domain)).render(out)
+        makefile = (out / "Makefile").read_text()
+        install_block = makefile.split("install-backend:", 1)[1].split("\n\n", 1)[0]
+        assert "spacy download en_core_web_sm" in install_block
+        # Must be guarded by an import check so it doesn't crash when extras are missing
+        assert 'python -c "import spacy"' in install_block
+
     def test_env_has_neo4j_lines_on_bolt(self, tmp_path):
         cfg = ProjectConfig(
             project_name="Bolt Test",

@@ -42,6 +42,12 @@ dependencies = [
 {% endif %}
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",  # for fastapi.testclient.TestClient
+]
+
 [tool.hatch.build.targets.wheel]
 packages = ["app"]
 

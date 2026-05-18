@@ -25,8 +25,12 @@ dev-backend:
 {% endif %}
 
 install-backend:
-	cd backend && uv sync
-	cd backend && uv run python -m spacy download en_core_web_sm
+	cd backend && uv sync --extra dev
+{% if not is_nams %}
+	@cd backend && uv run python -c "import spacy" 2>/dev/null && \
+		uv run python -m spacy download en_core_web_sm || \
+		echo "spacy not installed — skipping model download (NAMS backend or extraction extra disabled)"
+{% endif %}
 
 # Frontend
 dev-frontend:
