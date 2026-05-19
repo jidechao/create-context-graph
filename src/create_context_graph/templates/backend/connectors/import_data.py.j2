@@ -705,6 +705,8 @@ def _retry_deadletter() -> int:
             body_field = rec.get("body_field")
             if body_field:
                 body_fields[rec["label"]] = body_field
+        else:
+            logger.warning("Skipping unsupported deadletter record kind during retry: %r", kind)
 
     # Move the old file aside; if retry fails, write a fresh deadletter.
     archive = DEADLETTER_FILE.with_suffix(".jsonl.retrying")
